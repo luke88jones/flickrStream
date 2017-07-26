@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <span style="display: inline-block; height: 100%; vertical-align:middle;"></span>
+        <img 
+            data-ng-src="{{$ctrl.photo.mediaLink}}" 
+            alt="{{$ctrl.photo.title}}">
+    </div>
+    <div class="panel-footer">  
+        <div class="what-by">
+            <a 
+                class="title" 
+                href="{{$ctrl.photo.link}}"
+                target="_blank" 
+                title="{{$ctrl.photo.title}}">
+                {{$ctrl.photo.title}}
+            </a> 
+            <span>by </span>
+            <a 
+                class="author" 
+                href="https://www.flickr.com/photos/{{$ctrl.photo.authorId}}" 
+                target="_blank">
+                {{$ctrl.photo.author}}
+            </a>
+        </div>  
+        <div class="tags-container">
+            <ul>
+                <li>
+                    <span>Tags:</span>
+                </li>
+                <li 
+                    class="label label-primary"
+                    data-ng-if="$ctrl.hasTags"
+                    data-ng-repeat="tag in $ctrl.photo.tags">
+                    <span>{{tag}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
