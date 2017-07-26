@@ -15,15 +15,19 @@ export class FeedCtrl implements ng.IComponentController {
     ) { }
 
     $onInit() {
+        this.searchTags = "";
         this.loading = true;
+        this.photos = [];
         this.feedService.get()
             .then((res: IFlickrResponse) => this.responseHandler(res));
     }
 
     search() {
-        this.loading = true;
-        this.feedService.getByTag(this.searchTags.split(" "))
-            .then((res: IFlickrResponse) => this.responseHandler(res));
+        if (this.searchTags.length > 0) {
+            this.loading = true;
+            this.feedService.getByTag(this.searchTags.split(" "))
+                .then((res: IFlickrResponse) => this.responseHandler(res));
+        }
     }
 
     private responseHandler(res: IFlickrResponse) {
