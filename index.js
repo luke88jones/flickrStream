@@ -3,8 +3,10 @@ const express = require("express"),
 
 const app = express();
 
+const port = process.env.PORT || 8080;
+
 app.use("/", expressStaticGzip("dist"));
 
-app.listen(3000, () => {
-    console.log("App listening on port 3000");
+app.listen(port, () => {
+    console.log(`App listening on port ${port}`);
 });
