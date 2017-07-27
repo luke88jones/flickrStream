@@ -3,22 +3,20 @@ import { FlickrItem, IFlickrResponse } from "../models";
 
 export class FeedService {
     static $inject = [
-        "$http",
-        "$sce"
+        "$http"
     ];
 
     defaultParams: { jsoncallback: string; format: string; tags?: string };
     private readonly url: string;
 
     constructor(
-        private $http: angular.IHttpService,
-        $sce: angular.ISCEService
+        private $http: angular.IHttpService
     ) {
         this.url = "https://api.flickr.com/services/feeds/photos_public.gne";
         this.defaultParams = {
-                    jsoncallback: "JSON_CALLBACK",
-                    format: "json"
-                };
+            jsoncallback: "JSON_CALLBACK",
+            format: "json"
+        };
     }
 
     get() {
