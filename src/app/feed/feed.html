@@ -1,19 +1,17 @@
 <div class="search">
      <form autocomplete="off" novalidate> 
         <div class="form-group">
-            <label for="tagInput">Search for tags</label>
             <div class="input-group">
                 <input type="text" id="tagInput" class="form-control" data-ng-model="$ctrl.searchTags">
-                <span class="input-group-btn">
+                <span>
                     <button class="btn btn-primary" data-ng-click="$ctrl.search()">Search</button>
                 </span>
             </div>
         </div>
      </form> 
 </div>
-<!-- <div class="results">
-    <div class="loader" data-ng-show="$ctrl.loading"></div>
-    <div data-ng-if="!$ctrl.loading" data-ng-repeat="photo in $ctrl.photos">
-        <feed-card photo="photo"></feed-card>
-    </div>
-</div> -->
+<div class="loader" data-ng-show="$ctrl.loading"></div>
+<div class="results" data-ng-if="!$ctrl.loading">
+    <!-- <div data-ng-if="!$ctrl.loading" data-ng-repeat="photo in $ctrl.photos"> -->
+    <feed-card data-ng-repeat="photo in $ctrl.photos" photo="photo"></feed-card> 
+</div> 

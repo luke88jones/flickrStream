@@ -1,47 +1,87 @@
 feed-card {
     .panel-body {
-        height: 210px;
-        padding: 5px;
-        text-align: center;
+        min-height: 250px;
+        min-width: 250px;
+        background-size: cover;
+        position: relative;
     }
-    img {
-        display: inline-block;
-        max-height: 200px;
+
+    .panel-body .info-background,
+    .panel-body .what-by,
+    .panel-body .tags-container { 
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 60px;
+        width: 100%;
+        opacity: 0;
+        
+        -moz-transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
+        transition: .3s ease-in-out;
     }
-    .panel-footer {
-        font-size: 12px;
-        line-height: 12px;
-        height: 65px;
-        padding: 5px 10px;
+
+    .panel-body:hover .info-background {
+        background-color: #333;
+        opacity: 0.5;
     }
-    .what-by {
-        span {
-            vertical-align: top;
+
+    .panel-body:hover .what-by,
+    .panel-body:hover .tags-container { 
+        opacity: 1;
+    }
+
+    .panel-body {
+        .what-by {
+            align-items: flex-start;
+            height: 15px;
+            left: 2px;
+            bottom: 45px;
+
+            .title, .author {
+                display: inline-block;
+                max-width: 118px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            span {
+                padding: 0 2px;
+            }
         }
-        .title, .author {
-            display: inline-block;
-            max-width: 120px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-         }
-    }
-    .tags-container {
-        display: inline-block;
-        margin-top: 2px;
-        max-height: 42px;
-        max-width: 100%;
-        overflow: hidden;
-        ul {
-            list-style: none;
-            margin-bottom: 0;
-            padding: 0;
+    
+        .what-by, .what-by a {
+            color: white;
+            font-size: 12px;
+            text-decoration: none;
         }
-        li { 
-            display: inline-block;
-            margin-bottom: 1px;
-            margin-right: 2px;
-            word-wrap: normal;
+
+        .what-by a:hover {
+            color: #3a87ad;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .tags-container {
+            height: 45px;
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                height: 38px;
+                list-style: none;
+                margin: 0;
+                overflow: hidden;
+                padding-left: 2px;
+            }
+            li span { 
+                border: 1px solid #3a87ad;
+                border-radius: 4px;
+                background-color: #3a87ad;
+                color: white;
+                font-size: 10px;
+                line-height: 12px;
+                margin-right: 2px;
+                padding: 0 3px;
+            }
         }
     }
 }

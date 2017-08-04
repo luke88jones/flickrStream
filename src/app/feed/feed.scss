@@ -1,6 +1,6 @@
 feed {
     .search form {
-        margin: 20px 0;
+        margin: 20px 0 40px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -10,25 +10,56 @@ feed {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-basis: 500px;
 
         label {
             margin-right: 20px;
         }        
     }
 
-    .input-group input {
-        font-size: 16px;
-        line-height: 16px;
-        padding: 2px 4px;
+    .input-group {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
     }
 
-    .input-group .input-group-btn {
-        
+    .input-group input {
+        flex-grow: 1;
+        font-size: 16px;
+        line-height: 16px;
+        padding: 4px 0 4px 16px;
+        border: 1px solid #ccc;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+            border-color: rgba(81, 203, 238, 1);
+        }
+    }
+
+    .input-group button {
+        height: 32px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-left: none;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+        padding: 0 15px;
+        cursor: pointer;
+        &:hover {
+            color: white;
+            background-color: #333;
+        }
     }
 
 
     .results {
         border-top: 1px sold #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
     .loader {
