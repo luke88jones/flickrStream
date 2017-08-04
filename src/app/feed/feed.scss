@@ -1,4 +1,32 @@
 feed {
+    .search form {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        label {
+            margin-right: 20px;
+        }        
+    }
+
+    .input-group input {
+        font-size: 16px;
+        line-height: 16px;
+        padding: 2px 4px;
+    }
+
+    .input-group .input-group-btn {
+        
+    }
+
+
     .results {
         border-top: 1px sold #ccc;
     }

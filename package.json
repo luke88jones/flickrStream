@@ -56,8 +56,8 @@
   "dependencies": {
     "angular": "1.5.11",
     "angular-sanitize": "1.5.11",
-    "bootstrap-sass": "3.3.7",
     "express": "4.15.3",
-    "express-static-gzip": "0.3.0"
+    "express-static-gzip": "0.3.0",
+    "normalize-scss": "^7.0.0"
   }
 }
