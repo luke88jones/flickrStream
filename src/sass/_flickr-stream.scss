@@ -1,0 +1,7 @@
+@import "~normalize-scss/sass/normalize";
+
+@include normalize();
+
+body, input {
+    font-family: 'Open Sans', sans-serif;
+}

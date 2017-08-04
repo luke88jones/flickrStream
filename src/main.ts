@@ -1,8 +1,8 @@
 import * as angular from "angular";
 
-import "./sass/custom-bootstrap.scss";
-
 import * as app from "./app";
+
+import "./sass/_flickr-stream.scss";
 
 angular
     .module("flickrStream", [])

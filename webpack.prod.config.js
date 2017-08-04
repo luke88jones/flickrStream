@@ -6,6 +6,7 @@ const glob = require("glob"),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
     PurifyCSSPlugin = require("purifycss-webpack"),
     autoprefixer = require("autoprefixer"),
+    flexibility = require("postcss-flexibility"),
     webpackConfig = require("./webpack.config");
 
 const extractSass = new ExtractTextPlugin({
@@ -35,7 +36,11 @@ webpackConfig.module.rules[1] = {
             {
                 loader: "postcss-loader",
                 options: {
-                    plugins: () => [autoprefixer]
+                    sourceMap: true,
+                    plugins: () => [
+                        autoprefixer,
+                        flexibility
+                    ]
                 }
             },
             {
