@@ -5,7 +5,8 @@ const path = require("path"),
 module.exports = {
     entry: {
         "flickr-stream": "./src/main.ts",
-        "vendor-bundle": "./src/vendor-bundle.ts"
+        "vendor-bundle": "./src/vendor-bundle.ts",
+        "flexibility": "flexibility"
     },
     output: {
         filename: "[name].js",
@@ -66,7 +67,8 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             inject: true,
-            template: path.resolve(__dirname, "src/index.html")
+            template: path.resolve(__dirname, "src/index.html"),
+            excludeChunks: ["flexibility"]
         })
     ]
 };
